@@ -14,12 +14,16 @@ namespace XMLWeather
         public CurrentScreen()
         {
             InitializeComponent();
+
             DisplayCurrent();
         }
 
         public void DisplayCurrent()
         {
-
+            cityOutput.Text = Form1.days[0].location;
+            minOutput.Text = $"{Form1.RoundTemp(Form1.days[0].tempLow)}°C";
+            maxOutput.Text = $"{Form1.RoundTemp(Form1.days[0].tempHigh)}°C";
+            currentOutput.Text = $"{Form1.RoundTemp(Form1.days[0].currentTemp)}°C";
         }
 
         private void forecastLabel_Click(object sender, EventArgs e)

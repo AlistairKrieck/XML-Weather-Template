@@ -13,8 +13,11 @@ namespace XMLWeather
 {
     public partial class Form1 : Form
     {
-        // TODO: create list to hold day objects
+        //create list to hold day objects
+        public static List<Day> days = new List<Day>();
 
+        //create variables to hold screen size
+        public static int width, height;
 
         public Form1()
         {
@@ -22,9 +25,17 @@ namespace XMLWeather
 
             ExtractForecast();
             ExtractCurrent();
-            
+
+            //set screen size variables
+
+
+
             // open weather screen for todays weather
             CurrentScreen cs = new CurrentScreen();
+
+            cs.Width = ClientSize.Width;
+            cs.Height = ClientSize.Height;
+
             this.Controls.Add(cs);
         }
 
@@ -34,23 +45,65 @@ namespace XMLWeather
 
             while (reader.Read())
             {
-                //TODO: create a day object
+                //create a day object
+                Day d = new Day();
 
-                //TODO: fill day object with required data
+                //find time element and get day attribute
+                reader.ReadToFollowing("time");
+                d.date = reader.GetAttribute("day");
 
-                //TODO: if day object not null add to the days list
+                //find temperature element and get min and max values
+                reader.ReadToFollowing("temperature");
+                d.tempLow = reader.GetAttribute("min");
+                d.tempHigh = reader.GetAttribute("max");
+
+                reader.ReadToFollowing("clouds");
+                d.condition = reader.GetAttribute("value");
+
+                //add day to list of days
+                days.Add(d);
             }
         }
 
         private void ExtractCurrent()
         {
-            // current info is not included in forecast file so we need to use this file to get it
+            //current info is not included in forecast file so we need to use this file to get it
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Stratford,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
 
             //TODO: find the city and current temperature and add to appropriate item in days list
 
+            reader.ReadToFollowing("city");
+            days[0].location = reader.GetAttribute("name");
+
+            reader.ReadToFollowing("temperature");
+            days[0].currentTemp = reader.GetAttribute("value");
         }
 
+        //take temperature string, round, return new string
+        public static string RoundTemp(string roundingTemp)
+        {
+            string temperature;
 
+            double temp = Convert.ToDouble(roundingTemp);
+
+            temp = Math.Round(temp, 0);
+
+            temperature = temp.ToString();
+
+            return temperature;
+        }
+
+        public static List<string> RoundDayTempValues(Day d)
+        {
+            List<string> roundedTemps = new List<string>();
+
+            string roundedLow = RoundTemp(d.tempLow);
+            string roundedHigh = RoundTemp(d.tempHigh);
+
+            roundedTemps.Add(roundedLow);
+            roundedTemps.Add(roundedHigh);
+
+            return roundedTemps;
+        }
     }
 }
