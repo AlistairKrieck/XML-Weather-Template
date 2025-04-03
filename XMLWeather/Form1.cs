@@ -105,5 +105,10 @@ namespace XMLWeather
 
             return roundedTemps;
         }
+
+        public static void BuildDisplayLabel(List<Label> labels, List<Label> outputLabels, Day d, Panel backPanel)
+        {
+            
+        }
     }
 }

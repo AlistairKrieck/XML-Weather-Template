@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Displays\CurrentDisplayLabel.cs" />
     <Compile Include="CurrentScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -56,6 +57,8 @@
       <DependentUpon>CurrentScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Day.cs" />
+    <Compile Include="Displays\DisplayLabel.cs" />
+    <Compile Include="Displays\ForecastDisplayLabel.cs" />
     <Compile Include="ForecastScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
