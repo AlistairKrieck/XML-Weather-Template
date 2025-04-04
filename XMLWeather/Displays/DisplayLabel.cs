@@ -11,8 +11,8 @@ namespace XMLWeather
     {
         public Label maxOut, minOut, weatherOut;
         public Label maxLabel, minLabel;
-        public Panel backPanel;
-        public Day d;
+        public PictureBox backPanel;
+        public Day dayData;
 
         public int x, y;
         public int width, height;

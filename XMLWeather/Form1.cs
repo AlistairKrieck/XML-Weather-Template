@@ -52,13 +52,16 @@ namespace XMLWeather
                 reader.ReadToFollowing("time");
                 d.date = reader.GetAttribute("day");
 
+                //Find weather
+                reader.ReadToFollowing("symbol");
+                d.conditionValue = Convert.ToInt32(reader.GetAttribute("number"));
+                d.condition = reader.GetAttribute("name");
+
+
                 //find temperature element and get min and max values
                 reader.ReadToFollowing("temperature");
                 d.tempLow = reader.GetAttribute("min");
                 d.tempHigh = reader.GetAttribute("max");
-
-                reader.ReadToFollowing("clouds");
-                d.condition = reader.GetAttribute("value");
 
                 //add day to list of days
                 days.Add(d);
@@ -106,9 +109,40 @@ namespace XMLWeather
             return roundedTemps;
         }
 
-        public static void BuildDisplayLabel(List<Label> labels, List<Label> outputLabels, Day d, Panel backPanel)
+        public static void SetBackgroundImage(DisplayLabel d)
         {
-            
+            int val = d.dayData.conditionValue;
+
+            //TODO get background images and insert them into picture boxes
+
+            if (val >= 200 && val < 300)
+            {
+                //d.backPanel.Image = "";
+            }
+            else if (val >= 300 && val < 400)
+            {
+
+            }
+            else if (val >= 400 && val < 500)
+            {
+
+            }
+            else if (val >= 500 && val < 600)
+            {
+
+            }
+            else if (val >= 600 && val < 700)
+            {
+
+            }
+            else if (val >= 700 && val < 800)
+            {
+
+            }
+            else if (val >= 800 && val < 900)
+            {
+
+            }
         }
     }
 }

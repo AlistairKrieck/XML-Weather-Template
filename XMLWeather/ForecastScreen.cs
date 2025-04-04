@@ -13,54 +13,24 @@ namespace XMLWeather
     {
         List<ForecastDisplay> displayLabels = new List<ForecastDisplay>();
 
+        int displayPosition = 0;
+
         public ForecastScreen()
         {
             InitializeComponent();
             BuildLabelList();
+            SetInitPositions();
 
             displayForecast();
         }
 
         public void displayForecast()
         {
-            //date1.Text = Form1.days[1].date;
-
-            //List<string> dayOneTemps = Form1.RoundDayTempValues(Form1.days[1]);
-            //min1.Text = $"{dayOneTemps[0]}°C";
-            //max1.Text = $"{dayOneTemps[1]}°C";
-
-            //weather1.Text = $"{Form1.days[1].condition}";
-
-            //date2.Text = Form1.days[2].date;
-            //List<string> dayTwoTemps = Form1.RoundDayTempValues(Form1.days[2]);
-            //min2.Text = $"{dayTwoTemps[0]}°C";
-            //max2.Text = $"{dayTwoTemps[1]}°C";
-
-            //weather2.Text = $"{Form1.days[2].condition}";
-
-            //date3.Text = Form1.days[3].date;
-            //List<string> dayThreeTemps = Form1.RoundDayTempValues(Form1.days[3]);
-            //min3.Text = $"{dayThreeTemps[0]}°C";
-            //max3.Text = $"{dayThreeTemps[1]}°C";
-
-            //weather3.Text = $"{Form1.days[3].condition}";
-
-            //date4.Text = Form1.days[4].date;
-            //List<string> dayFourTemps = Form1.RoundDayTempValues(Form1.days[4]);
-            //min4.Text = $"{dayFourTemps[0]}°C";
-            //max4.Text = $"{dayFourTemps[1]}°C";
-
-            //weather4.Text = $"{Form1.days[4].condition}";
-
-            //date5.Text = Form1.days[5].date;
-            //List<string> dayFiveTemps = Form1.RoundDayTempValues(Form1.days[5]);
-            //minL5.Text = $"{dayFiveTemps[0]}°C";
-            //maxL5.Text = $"{dayFiveTemps[1]}°C";
-
-            //weather5.Text = $"{Form1.days[5].condition}";
-
-            displayLabels[0].MoveLabel(this.Width / 2 - displayLabels[0].width / 2, 60);
-            displayLabels[0].BuildLabel();
+            foreach (var fd in displayLabels)
+            {
+                InsertLabelData(fd);
+                Form1.SetBackgroundImage(fd);
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -79,6 +49,86 @@ namespace XMLWeather
             displayLabels.Add(new ForecastDisplay(0, 0, date3, max3, min3, maxL3, minL3, weather3, back3, Form1.days[3]));
             displayLabels.Add(new ForecastDisplay(0, 0, date4, max4, min4, maxL4, minL4, weather4, back4, Form1.days[4]));
             displayLabels.Add(new ForecastDisplay(0, 0, date5, max5, min5, maxL5, minL5, weather5, back5, Form1.days[5]));
+        }
+
+        public void InsertLabelData(ForecastDisplay fd)
+        {
+            fd.dateOut.Text = fd.dayData.date;
+
+            List<string> tempRange = Form1.RoundDayTempValues(fd.dayData);
+            fd.minOut.Text = $"{tempRange[0]}°C";
+            fd.maxOut.Text = $"{tempRange[1]}°C";
+            fd.weatherOut.Text = fd.dayData.condition;
+        }
+
+        public void SetInitPositions()
+        {
+            displayLabels[0].MoveLabel(this.Width * 2 / 10 - displayLabels[0].width / 2, 60);
+            displayLabels[1].MoveLabel(this.Width * 5 / 10 - displayLabels[1].width / 2, 60);
+            displayLabels[2].MoveLabel(this.Width * 8 / 10 - displayLabels[2].width / 2, 60);
+            displayLabels[3].HideLabel();
+            displayLabels[4].HideLabel();
+
+            leftArrowButton.Location = new Point(10, this.Height / 2 - leftArrowButton.Width / 2);
+            rightArrowButton.Location = new Point(this.Width - rightArrowButton.Width - 10, this.Height / 2 - rightArrowButton.Width / 2);
+        }
+
+        public void ShiftDisplays(bool left)
+        {
+            if (left)
+            {
+                displayPosition--;
+            }
+
+            else
+            {
+                displayPosition++;
+            }
+
+            int[] positions = new int[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (displayPosition < 0)
+                {
+                    displayPosition = displayLabels.Count - 1;
+                }
+
+                else if (displayPosition > displayLabels.Count - 1)
+                {
+                    displayPosition = 0;
+                }
+
+                positions[i] = displayPosition;
+
+                displayPosition++;
+            }
+
+            ShowAllLabels();
+
+            displayLabels[positions[0]].MoveLabel(this.Width * 2 / 10 - displayLabels[0].width / 2, 60);
+            displayLabels[positions[1]].MoveLabel(this.Width * 5 / 10 - displayLabels[1].width / 2, 60);
+            displayLabels[positions[2]].MoveLabel(this.Width * 8 / 10 - displayLabels[2].width / 2, 60);
+            displayLabels[positions[3]].HideLabel();
+            displayLabels[positions[4]].HideLabel();
+        }
+
+        private void leftArrowButton_Click(object sender, EventArgs e)
+        {
+            ShiftDisplays(true);
+        }
+
+        private void rightArrowButton_Click(object sender, EventArgs e)
+        {
+            ShiftDisplays(false);
+        }
+
+        private void ShowAllLabels()
+        {
+            foreach (var d in displayLabels)
+            {
+                d.ShowLabel();
+            }
         }
     }
 }

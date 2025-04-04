@@ -12,7 +12,7 @@ namespace XMLWeather
         public Label currentOut;
         public Label currentLabel;
 
-        public CurrentDisplayLabel(Label _maxOut, Label _minOut, Label _minLabel, Label _maxLabel, Label _currentOut, Label _currentLabel, Label _weatherOut, Panel _backPanel, Day _d)
+        public CurrentDisplayLabel(Label _maxOut, Label _minOut, Label _minLabel, Label _maxLabel, Label _currentOut, Label _currentLabel, Label _weatherOut, PictureBox _backPanel, Day _dayData)
         {
             maxOut = _maxOut;
             minOut = _minOut;
@@ -22,7 +22,7 @@ namespace XMLWeather
             currentLabel = _currentLabel;
             weatherOut = _weatherOut;
             backPanel = _backPanel;
-            d = _d;
+            dayData = _dayData;
         }
     }
 }
