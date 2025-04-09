@@ -26,10 +26,13 @@ namespace XMLWeather
 
         public void displayForecast()
         {
-            foreach (var fd in displayLabels)
+            for (int i = 0; i < displayLabels.Count; i++)
             {
-                InsertLabelData(fd);
-                Form1.SetBackgroundImage(fd);
+                displayLabels[i].dayData = Form1.days[i + 1];
+
+                displayLabels[i].DisplayLabelData();
+
+                displayLabels[i].SetBackgroundImage();
             }
         }
 
@@ -51,16 +54,6 @@ namespace XMLWeather
             displayLabels.Add(new ForecastDisplay(0, 0, date5, max5, min5, maxL5, minL5, weather5, back5, Form1.days[5]));
         }
 
-        public void InsertLabelData(ForecastDisplay fd)
-        {
-            fd.dateOut.Text = fd.dayData.date;
-
-            List<string> tempRange = Form1.RoundDayTempValues(fd.dayData);
-            fd.minOut.Text = $"{tempRange[0]}°C";
-            fd.maxOut.Text = $"{tempRange[1]}°C";
-            fd.weatherOut.Text = fd.dayData.condition;
-        }
-
         public void SetInitPositions()
         {
             displayLabels[0].MoveLabel(this.Width * 2 / 10 - displayLabels[0].width / 2, 60);
@@ -75,6 +68,12 @@ namespace XMLWeather
 
         public void ShiftDisplays(bool left)
         {
+            //fixes bug caused by resetting displayPosition to 0 if greater than displayLabels.Count - 1
+            if (displayPosition == displayLabels.Count)
+            {
+                displayPosition = 0;
+            }
+
             if (left)
             {
                 displayPosition--;
@@ -85,15 +84,19 @@ namespace XMLWeather
                 displayPosition++;
             }
 
+
+
             int[] positions = new int[5];
 
             for (int i = 0; i < 5; i++)
             {
+                //if position in line is negative, push it to the end of the line
                 if (displayPosition < 0)
                 {
                     displayPosition = displayLabels.Count - 1;
                 }
 
+                //if position in line is greater than the size of the line, push it to the front of the line
                 else if (displayPosition > displayLabels.Count - 1)
                 {
                     displayPosition = 0;
@@ -129,6 +132,24 @@ namespace XMLWeather
             {
                 d.ShowLabel();
             }
+        }
+
+        private void enterCityInputButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form1.city = cityInput.Text;
+
+                Form1.ExtractForecast();
+                Form1.ExtractCurrent();
+
+                displayForecast();
+            }
+            catch
+            {
+                cityInput.Text = "Error; Not Found";
+            }
+
         }
     }
 }

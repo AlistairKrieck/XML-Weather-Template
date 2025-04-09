@@ -15,6 +15,8 @@ namespace XMLWeather
         {
             InitializeComponent();
 
+            CreateDisplay();
+
             DisplayCurrent();
         }
 
@@ -33,6 +35,15 @@ namespace XMLWeather
 
             ForecastScreen fs = new ForecastScreen();
             f.Controls.Add(fs);
+        }
+
+        public void CreateDisplay()
+        {
+            CurrentDisplayLabel display = new CurrentDisplayLabel(0, 0, maxOutput, minOutput, minLabel, maxLabel, currentOutput, current, weatherOutput, cityOutput, picBox, Form1.days[0]);
+            int x = this.Width / 2 - display.width / 2;
+            int y = this.Height / 2 - display.height / 2;
+
+            display.MoveLabel(x, y);
         }
     }
 }

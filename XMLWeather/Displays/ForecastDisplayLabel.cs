@@ -27,6 +27,11 @@ namespace XMLWeather
 
             width = backPanel.Width;
             height = backPanel.Height;
+
+            BuildLabel();
+
+            SetAllParents();
+            dateOut.Parent = backPanel;
         }
 
         public void BuildLabel()
@@ -38,14 +43,6 @@ namespace XMLWeather
             minLabel.Location = new Point(x + 10, y + 85);
             minOut.Location = new Point(x + width - minOut.Width - 10, y + 90);
             weatherOut.Location = new Point(x + width / 2 - weatherOut.Width / 2, y + 140);
-        }
-
-        public void MoveLabel(int _x, int _y)
-        {
-            x = _x;
-            y = _y;
-
-            BuildLabel();
         }
 
         public void HideLabel()
@@ -68,6 +65,16 @@ namespace XMLWeather
             minLabel.Visible = true;
             minOut.Visible = true;
             weatherOut.Visible = true;
+        }
+
+        public void DisplayLabelData()
+        {
+            dateOut.Text = dayData.date;
+
+            List<string> tempRange = Form1.RoundDayTempValues(dayData);
+            minOut.Text = $"{tempRange[0]}°C";
+            maxOut.Text = $"{tempRange[1]}°C";
+            weatherOut.Text = dayData.condition;
         }
     }
 }
