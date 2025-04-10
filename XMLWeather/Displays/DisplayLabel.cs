@@ -12,6 +12,7 @@ namespace XMLWeather
     {
         public Label maxOut, minOut, weatherOut;
         public Label maxLabel, minLabel;
+        public Label dateOut;
         public PictureBox backPanel;
         public Day dayData;
 
@@ -28,6 +29,7 @@ namespace XMLWeather
 
         public void SetAllParents()
         {
+            dateOut.Parent = backPanel;
             maxOut.Parent = backPanel;
             minOut.Parent = backPanel;
             weatherOut.Parent = backPanel;

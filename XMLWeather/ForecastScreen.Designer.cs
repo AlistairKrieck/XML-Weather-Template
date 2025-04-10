@@ -72,12 +72,20 @@
             this.max1 = new System.Windows.Forms.Label();
             this.leftArrowButton = new System.Windows.Forms.Button();
             this.rightArrowButton = new System.Windows.Forms.Button();
+            this.weather6 = new System.Windows.Forms.Label();
+            this.minL6 = new System.Windows.Forms.Label();
+            this.min6 = new System.Windows.Forms.Label();
+            this.maxL6 = new System.Windows.Forms.Label();
+            this.date6 = new System.Windows.Forms.Label();
+            this.max6 = new System.Windows.Forms.Label();
+            this.back6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back6)).BeginInit();
             this.SuspendLayout();
             // 
             // forecastLabel
@@ -121,6 +129,7 @@
             // weather2
             // 
             this.weather2.BackColor = System.Drawing.Color.White;
+            this.weather2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.weather2.ForeColor = System.Drawing.Color.Black;
             this.weather2.Location = new System.Drawing.Point(819, 204);
             this.weather2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -132,8 +141,8 @@
             // minL2
             // 
             this.minL2.BackColor = System.Drawing.Color.Transparent;
-            this.minL2.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minL2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.minL2.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.minL2.ForeColor = System.Drawing.Color.White;
             this.minL2.Location = new System.Drawing.Point(837, 162);
             this.minL2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minL2.Name = "minL2";
@@ -145,6 +154,7 @@
             // min2
             // 
             this.min2.BackColor = System.Drawing.Color.White;
+            this.min2.ForeColor = System.Drawing.Color.Black;
             this.min2.Location = new System.Drawing.Point(921, 162);
             this.min2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min2.Name = "min2";
@@ -155,8 +165,8 @@
             // maxL2
             // 
             this.maxL2.BackColor = System.Drawing.Color.Transparent;
-            this.maxL2.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxL2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.maxL2.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.maxL2.ForeColor = System.Drawing.Color.White;
             this.maxL2.Location = new System.Drawing.Point(837, 117);
             this.maxL2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maxL2.Name = "maxL2";
@@ -168,12 +178,12 @@
             // date2
             // 
             this.date2.BackColor = System.Drawing.Color.Transparent;
-            this.date2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.date2.Font = new System.Drawing.Font("MS Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.date2.ForeColor = System.Drawing.Color.White;
             this.date2.Location = new System.Drawing.Point(821, 76);
             this.date2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.date2.Name = "date2";
-            this.date2.Size = new System.Drawing.Size(183, 30);
+            this.date2.Size = new System.Drawing.Size(250, 30);
             this.date2.TabIndex = 70;
             this.date2.Text = "Date";
             this.date2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,6 +191,7 @@
             // max2
             // 
             this.max2.BackColor = System.Drawing.Color.White;
+            this.max2.ForeColor = System.Drawing.Color.Black;
             this.max2.Location = new System.Drawing.Point(921, 117);
             this.max2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max2.Name = "max2";
@@ -191,6 +202,7 @@
             // weather3
             // 
             this.weather3.BackColor = System.Drawing.Color.White;
+            this.weather3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.weather3.ForeColor = System.Drawing.Color.Black;
             this.weather3.Location = new System.Drawing.Point(1068, 204);
             this.weather3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -202,8 +214,8 @@
             // minL3
             // 
             this.minL3.BackColor = System.Drawing.Color.Transparent;
-            this.minL3.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minL3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.minL3.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.minL3.ForeColor = System.Drawing.Color.White;
             this.minL3.Location = new System.Drawing.Point(1088, 162);
             this.minL3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minL3.Name = "minL3";
@@ -215,6 +227,7 @@
             // min3
             // 
             this.min3.BackColor = System.Drawing.Color.White;
+            this.min3.ForeColor = System.Drawing.Color.Black;
             this.min3.Location = new System.Drawing.Point(1171, 162);
             this.min3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min3.Name = "min3";
@@ -225,8 +238,8 @@
             // maxL3
             // 
             this.maxL3.BackColor = System.Drawing.Color.Transparent;
-            this.maxL3.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxL3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.maxL3.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.maxL3.ForeColor = System.Drawing.Color.White;
             this.maxL3.Location = new System.Drawing.Point(1088, 117);
             this.maxL3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maxL3.Name = "maxL3";
@@ -238,12 +251,12 @@
             // date3
             // 
             this.date3.BackColor = System.Drawing.Color.Transparent;
-            this.date3.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.date3.Font = new System.Drawing.Font("MS Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.date3.ForeColor = System.Drawing.Color.White;
             this.date3.Location = new System.Drawing.Point(1071, 76);
             this.date3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.date3.Name = "date3";
-            this.date3.Size = new System.Drawing.Size(183, 30);
+            this.date3.Size = new System.Drawing.Size(250, 30);
             this.date3.TabIndex = 76;
             this.date3.Text = "Date";
             this.date3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -251,6 +264,7 @@
             // max3
             // 
             this.max3.BackColor = System.Drawing.Color.White;
+            this.max3.ForeColor = System.Drawing.Color.Black;
             this.max3.Location = new System.Drawing.Point(1171, 117);
             this.max3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max3.Name = "max3";
@@ -261,6 +275,7 @@
             // weather4
             // 
             this.weather4.BackColor = System.Drawing.Color.White;
+            this.weather4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.weather4.ForeColor = System.Drawing.Color.Black;
             this.weather4.Location = new System.Drawing.Point(819, 386);
             this.weather4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -272,8 +287,8 @@
             // minL4
             // 
             this.minL4.BackColor = System.Drawing.Color.Transparent;
-            this.minL4.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minL4.ForeColor = System.Drawing.Color.SeaGreen;
+            this.minL4.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.minL4.ForeColor = System.Drawing.Color.White;
             this.minL4.Location = new System.Drawing.Point(837, 345);
             this.minL4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minL4.Name = "minL4";
@@ -285,6 +300,7 @@
             // min4
             // 
             this.min4.BackColor = System.Drawing.Color.White;
+            this.min4.ForeColor = System.Drawing.Color.Black;
             this.min4.Location = new System.Drawing.Point(921, 345);
             this.min4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min4.Name = "min4";
@@ -295,8 +311,8 @@
             // maxL4
             // 
             this.maxL4.BackColor = System.Drawing.Color.Transparent;
-            this.maxL4.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxL4.ForeColor = System.Drawing.Color.SeaGreen;
+            this.maxL4.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.maxL4.ForeColor = System.Drawing.Color.White;
             this.maxL4.Location = new System.Drawing.Point(837, 300);
             this.maxL4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maxL4.Name = "maxL4";
@@ -308,12 +324,12 @@
             // date4
             // 
             this.date4.BackColor = System.Drawing.Color.Transparent;
-            this.date4.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date4.ForeColor = System.Drawing.Color.SeaGreen;
+            this.date4.Font = new System.Drawing.Font("MS Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.date4.ForeColor = System.Drawing.Color.White;
             this.date4.Location = new System.Drawing.Point(821, 258);
             this.date4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.date4.Name = "date4";
-            this.date4.Size = new System.Drawing.Size(183, 30);
+            this.date4.Size = new System.Drawing.Size(250, 30);
             this.date4.TabIndex = 82;
             this.date4.Text = "Date";
             this.date4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,6 +337,7 @@
             // max4
             // 
             this.max4.BackColor = System.Drawing.Color.White;
+            this.max4.ForeColor = System.Drawing.Color.Black;
             this.max4.Location = new System.Drawing.Point(921, 300);
             this.max4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max4.Name = "max4";
@@ -331,6 +348,7 @@
             // weather5
             // 
             this.weather5.BackColor = System.Drawing.Color.White;
+            this.weather5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.weather5.ForeColor = System.Drawing.Color.Black;
             this.weather5.Location = new System.Drawing.Point(1084, 386);
             this.weather5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -342,8 +360,8 @@
             // minL5
             // 
             this.minL5.BackColor = System.Drawing.Color.Transparent;
-            this.minL5.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minL5.ForeColor = System.Drawing.Color.SeaGreen;
+            this.minL5.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.minL5.ForeColor = System.Drawing.Color.White;
             this.minL5.Location = new System.Drawing.Point(1104, 345);
             this.minL5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minL5.Name = "minL5";
@@ -355,6 +373,7 @@
             // min5
             // 
             this.min5.BackColor = System.Drawing.Color.White;
+            this.min5.ForeColor = System.Drawing.Color.Black;
             this.min5.Location = new System.Drawing.Point(1187, 345);
             this.min5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min5.Name = "min5";
@@ -365,8 +384,8 @@
             // maxL5
             // 
             this.maxL5.BackColor = System.Drawing.Color.Transparent;
-            this.maxL5.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxL5.ForeColor = System.Drawing.Color.SeaGreen;
+            this.maxL5.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.maxL5.ForeColor = System.Drawing.Color.White;
             this.maxL5.Location = new System.Drawing.Point(1104, 300);
             this.maxL5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maxL5.Name = "maxL5";
@@ -378,12 +397,12 @@
             // date5
             // 
             this.date5.BackColor = System.Drawing.Color.Transparent;
-            this.date5.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date5.ForeColor = System.Drawing.Color.SeaGreen;
+            this.date5.Font = new System.Drawing.Font("MS Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.date5.ForeColor = System.Drawing.Color.White;
             this.date5.Location = new System.Drawing.Point(1087, 258);
             this.date5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.date5.Name = "date5";
-            this.date5.Size = new System.Drawing.Size(183, 30);
+            this.date5.Size = new System.Drawing.Size(250, 30);
             this.date5.TabIndex = 92;
             this.date5.Text = "Date";
             this.date5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,6 +410,7 @@
             // max5
             // 
             this.max5.BackColor = System.Drawing.Color.White;
+            this.max5.ForeColor = System.Drawing.Color.Black;
             this.max5.Location = new System.Drawing.Point(1187, 300);
             this.max5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max5.Name = "max5";
@@ -414,7 +434,7 @@
             // 
             this.enterCityInputButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterCityInputButton.ForeColor = System.Drawing.Color.Black;
-            this.enterCityInputButton.Location = new System.Drawing.Point(1129, 17);
+            this.enterCityInputButton.Location = new System.Drawing.Point(1130, 17);
             this.enterCityInputButton.Name = "enterCityInputButton";
             this.enterCityInputButton.Size = new System.Drawing.Size(93, 34);
             this.enterCityInputButton.TabIndex = 111;
@@ -493,6 +513,7 @@
             // weather1
             // 
             this.weather1.BackColor = System.Drawing.Color.White;
+            this.weather1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.weather1.ForeColor = System.Drawing.Color.Black;
             this.weather1.Location = new System.Drawing.Point(573, 310);
             this.weather1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -504,8 +525,8 @@
             // minL1
             // 
             this.minL1.BackColor = System.Drawing.Color.Transparent;
-            this.minL1.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minL1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.minL1.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.minL1.ForeColor = System.Drawing.Color.White;
             this.minL1.Location = new System.Drawing.Point(592, 268);
             this.minL1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minL1.Name = "minL1";
@@ -517,6 +538,8 @@
             // min1
             // 
             this.min1.BackColor = System.Drawing.Color.White;
+            this.min1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.min1.ForeColor = System.Drawing.Color.Black;
             this.min1.Location = new System.Drawing.Point(676, 268);
             this.min1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min1.Name = "min1";
@@ -527,8 +550,8 @@
             // maxL1
             // 
             this.maxL1.BackColor = System.Drawing.Color.Transparent;
-            this.maxL1.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxL1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.maxL1.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.maxL1.ForeColor = System.Drawing.Color.White;
             this.maxL1.Location = new System.Drawing.Point(592, 223);
             this.maxL1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maxL1.Name = "maxL1";
@@ -540,12 +563,12 @@
             // date1
             // 
             this.date1.BackColor = System.Drawing.Color.Transparent;
-            this.date1.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.date1.Font = new System.Drawing.Font("MS Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.date1.ForeColor = System.Drawing.Color.White;
             this.date1.Location = new System.Drawing.Point(576, 182);
             this.date1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.date1.Name = "date1";
-            this.date1.Size = new System.Drawing.Size(183, 30);
+            this.date1.Size = new System.Drawing.Size(250, 30);
             this.date1.TabIndex = 104;
             this.date1.Text = "Date";
             this.date1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -553,6 +576,8 @@
             // max1
             // 
             this.max1.BackColor = System.Drawing.Color.White;
+            this.max1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.max1.ForeColor = System.Drawing.Color.Black;
             this.max1.Location = new System.Drawing.Point(676, 223);
             this.max1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max1.Name = "max1";
@@ -562,10 +587,11 @@
             // 
             // leftArrowButton
             // 
+            this.leftArrowButton.ForeColor = System.Drawing.Color.Black;
             this.leftArrowButton.Location = new System.Drawing.Point(4, 220);
             this.leftArrowButton.Margin = new System.Windows.Forms.Padding(4);
             this.leftArrowButton.Name = "leftArrowButton";
-            this.leftArrowButton.Size = new System.Drawing.Size(100, 68);
+            this.leftArrowButton.Size = new System.Drawing.Size(96, 62);
             this.leftArrowButton.TabIndex = 100;
             this.leftArrowButton.Text = "<---";
             this.leftArrowButton.UseVisualStyleBackColor = true;
@@ -573,14 +599,100 @@
             // 
             // rightArrowButton
             // 
+            this.rightArrowButton.ForeColor = System.Drawing.Color.Black;
             this.rightArrowButton.Location = new System.Drawing.Point(4, 295);
             this.rightArrowButton.Margin = new System.Windows.Forms.Padding(4);
             this.rightArrowButton.Name = "rightArrowButton";
-            this.rightArrowButton.Size = new System.Drawing.Size(100, 68);
+            this.rightArrowButton.Size = new System.Drawing.Size(96, 62);
             this.rightArrowButton.TabIndex = 109;
             this.rightArrowButton.Text = "--->";
             this.rightArrowButton.UseVisualStyleBackColor = true;
             this.rightArrowButton.Click += new System.EventHandler(this.rightArrowButton_Click);
+            // 
+            // weather6
+            // 
+            this.weather6.BackColor = System.Drawing.Color.White;
+            this.weather6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.weather6.ForeColor = System.Drawing.Color.Black;
+            this.weather6.Location = new System.Drawing.Point(702, 353);
+            this.weather6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.weather6.Name = "weather6";
+            this.weather6.Size = new System.Drawing.Size(187, 30);
+            this.weather6.TabIndex = 116;
+            this.weather6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // minL6
+            // 
+            this.minL6.BackColor = System.Drawing.Color.Transparent;
+            this.minL6.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.minL6.ForeColor = System.Drawing.Color.White;
+            this.minL6.Location = new System.Drawing.Point(721, 311);
+            this.minL6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.minL6.Name = "minL6";
+            this.minL6.Size = new System.Drawing.Size(75, 26);
+            this.minL6.TabIndex = 115;
+            this.minL6.Text = "Low:";
+            this.minL6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // min6
+            // 
+            this.min6.BackColor = System.Drawing.Color.White;
+            this.min6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.min6.ForeColor = System.Drawing.Color.Black;
+            this.min6.Location = new System.Drawing.Point(805, 311);
+            this.min6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.min6.Name = "min6";
+            this.min6.Size = new System.Drawing.Size(51, 30);
+            this.min6.TabIndex = 114;
+            this.min6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // maxL6
+            // 
+            this.maxL6.BackColor = System.Drawing.Color.Transparent;
+            this.maxL6.Font = new System.Drawing.Font("MS Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.maxL6.ForeColor = System.Drawing.Color.White;
+            this.maxL6.Location = new System.Drawing.Point(721, 266);
+            this.maxL6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.maxL6.Name = "maxL6";
+            this.maxL6.Size = new System.Drawing.Size(75, 26);
+            this.maxL6.TabIndex = 113;
+            this.maxL6.Text = "High:";
+            this.maxL6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // date6
+            // 
+            this.date6.BackColor = System.Drawing.Color.Transparent;
+            this.date6.Font = new System.Drawing.Font("MS Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.date6.ForeColor = System.Drawing.Color.White;
+            this.date6.Location = new System.Drawing.Point(705, 225);
+            this.date6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.date6.Name = "date6";
+            this.date6.Size = new System.Drawing.Size(250, 30);
+            this.date6.TabIndex = 112;
+            this.date6.Text = "Date";
+            this.date6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // max6
+            // 
+            this.max6.BackColor = System.Drawing.Color.White;
+            this.max6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.max6.ForeColor = System.Drawing.Color.Black;
+            this.max6.Location = new System.Drawing.Point(805, 266);
+            this.max6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.max6.Name = "max6";
+            this.max6.Size = new System.Drawing.Size(51, 30);
+            this.max6.TabIndex = 111;
+            this.max6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // back6
+            // 
+            this.back6.Location = new System.Drawing.Point(325, 119);
+            this.back6.Margin = new System.Windows.Forms.Padding(4);
+            this.back6.Name = "back6";
+            this.back6.Size = new System.Drawing.Size(300, 482);
+            this.back6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.back6.TabIndex = 110;
+            this.back6.TabStop = false;
             // 
             // ForecastScreen
             // 
@@ -589,6 +701,13 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::XMLWeather.Properties.Resources.clouds;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.weather6);
+            this.Controls.Add(this.minL6);
+            this.Controls.Add(this.min6);
+            this.Controls.Add(this.maxL6);
+            this.Controls.Add(this.date6);
+            this.Controls.Add(this.max6);
+            this.Controls.Add(this.back6);
             this.Controls.Add(this.rightArrowButton);
             this.Controls.Add(this.leftArrowButton);
             this.Controls.Add(this.weather1);
@@ -631,7 +750,7 @@
             this.Controls.Add(this.back3);
             this.Controls.Add(this.back2);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.SeaGreen;
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ForecastScreen";
             this.Size = new System.Drawing.Size(1280, 720);
@@ -642,6 +761,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.back3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.back4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.back5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -692,5 +812,13 @@
         private System.Windows.Forms.Button rightArrowButton;
         private System.Windows.Forms.TextBox cityInput;
         private System.Windows.Forms.Button enterCityInputButton;
+        private System.Windows.Forms.Label minL6;
+        private System.Windows.Forms.Label min6;
+        private System.Windows.Forms.Label maxL6;
+        private System.Windows.Forms.Label date6;
+        private System.Windows.Forms.Label max6;
+        private System.Windows.Forms.PictureBox back6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label weather6;
     }
 }

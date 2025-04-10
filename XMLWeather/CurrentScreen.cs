@@ -11,21 +11,20 @@ namespace XMLWeather
 {
     public partial class CurrentScreen : UserControl
     {
+        CurrentDisplayLabel display;
+
+        COMMENT STUFF
+
         public CurrentScreen()
         {
             InitializeComponent();
 
+            cityInput.Text = Form1.city;
+
             CreateDisplay();
 
-            DisplayCurrent();
-        }
-
-        public void DisplayCurrent()
-        {
-            cityOutput.Text = Form1.days[0].location;
-            minOutput.Text = $"{Form1.RoundTemp(Form1.days[0].tempLow)}°C";
-            maxOutput.Text = $"{Form1.RoundTemp(Form1.days[0].tempHigh)}°C";
-            currentOutput.Text = $"{Form1.RoundTemp(Form1.days[0].currentTemp)}°C";
+            display.SetBackgroundImage();
+            display.DisplayLabelData();
         }
 
         private void forecastLabel_Click(object sender, EventArgs e)
@@ -39,11 +38,39 @@ namespace XMLWeather
 
         public void CreateDisplay()
         {
-            CurrentDisplayLabel display = new CurrentDisplayLabel(0, 0, maxOutput, minOutput, minLabel, maxLabel, currentOutput, current, weatherOutput, cityOutput, picBox, Form1.days[0]);
+            display = new CurrentDisplayLabel(0, 0, maxOutput, minOutput, minLabel, maxLabel, currentOutput, current, weatherOutput, date, picBox, Form1.days[0]);
             int x = this.Width / 2 - display.width / 2;
-            int y = this.Height / 2 - display.height / 2;
+            int y = panel1.Height;
 
             display.MoveLabel(x, y);
+        }
+
+        private void enterCityInputButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form1.city = cityInput.Text;
+
+                Form1.ExtractForecast();
+                Form1.ExtractCurrent();
+
+                display.dayData = Form1.days[0];
+
+                display.DisplayLabelData();
+                display.SetBackgroundImage();
+            }
+            catch
+            {
+                Form1.city = "Stratford,CA";
+
+                Form1.ExtractForecast();
+                Form1.ExtractCurrent();
+
+                display.DisplayLabelData();
+                display.SetBackgroundImage();
+
+                cityInput.Text = "Error; Not Found";
+            }
         }
     }
 }

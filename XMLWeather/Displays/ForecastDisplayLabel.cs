@@ -10,7 +10,6 @@ namespace XMLWeather
 {
     public partial class ForecastDisplay : DisplayLabel
     {
-        public Label dateOut;
         public ForecastDisplay(int _x, int _y, Label _dateOut, Label _maxOut, Label _minOut, Label _maxLabel, Label _minLabel, Label _weatherOut, PictureBox _backPanel, Day _dayData)
         {
             dateOut = _dateOut;
@@ -31,7 +30,6 @@ namespace XMLWeather
             BuildLabel();
 
             SetAllParents();
-            dateOut.Parent = backPanel;
         }
 
         public void BuildLabel()
@@ -69,7 +67,7 @@ namespace XMLWeather
 
         public void DisplayLabelData()
         {
-            dateOut.Text = dayData.date;
+            dateOut.Text = Convert.ToDateTime(dayData.date).ToString("dddd MMM dd");
 
             List<string> tempRange = Form1.RoundDayTempValues(dayData);
             minOut.Text = $"{tempRange[0]}°C";
