@@ -10,6 +10,7 @@ namespace XMLWeather
 {
     public partial class CurrentDisplayLabel : DisplayLabel
     {
+        //create new labels for the current temperature
         public Label currentOut;
         public Label currentLabel;
 
@@ -32,13 +33,18 @@ namespace XMLWeather
             width = backPanel.Width;
             height = backPanel.Height;
 
+            //construct the display
             BuildLabel();
 
+            //set all labels parent to the picture box after moving
+            //this prevents a bug where the labels move to odd positions when their parent is the picture box before moving
             SetAllParents();
+            //set CurrentDisplay exclusive labels as well
             currentLabel.Parent = backPanel;
             currentOut.Parent = backPanel;
         }
 
+        //move all labels to their desired postion related to the picture box
         public void BuildLabel()
         {
             //Distance first label starts from the top of the display
@@ -68,15 +74,20 @@ namespace XMLWeather
             weatherOut.Location = new Point(x + width / 2 - weatherOut.Width / 2, y + 300);
         }
 
+        //output weather data stored in the day object to the display
         public void DisplayLabelData()
         {
+            //format then output todays date
             dateOut.Text = "Today; ";
             dateOut.Text += Convert.ToDateTime(dayData.date).ToString("dddd MMM dd");
 
+            //round the max, min, and current temperatures
             List<string> tempRange = Form1.RoundDayTempValues(dayData);
+            currentOut.Text = Form1.RoundTemp(dayData.currentTemp);
+
+            //display the rounded temperatures
             minOut.Text = $"{tempRange[0]}°C";
             maxOut.Text = $"{tempRange[1]}°C";
-            currentOut.Text = Form1.RoundTemp(dayData.currentTemp);
             weatherOut.Text = dayData.condition;
         }
     }

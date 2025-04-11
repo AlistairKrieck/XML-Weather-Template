@@ -19,17 +19,19 @@ namespace XMLWeather
         //create variables to hold screen size
         public static int width, height;
 
+        //create public static string to hold which city is being looked at
         public static string city = "Stratford,CA";
 
         public Form1()
         {
             InitializeComponent();
 
+            //fill list of days with weather information
             ExtractForecast();
             ExtractCurrent();
 
 
-            // open weather screen for todays weather
+            //open weather screen for todays weather
             CurrentScreen cs = new CurrentScreen();
 
             cs.Width = ClientSize.Width;
@@ -38,10 +40,13 @@ namespace XMLWeather
             this.Controls.Add(cs);
         }
 
+        //gets weather info for the next 7 days and store it in day objects
         public static void ExtractForecast()
         {
+            //clear the day list so new info replaces old instead of stacking on top of it
             days.Clear();
 
+            //create new reader object that reads the XML data from the requested city
             XmlReader reader = XmlReader.Create($"http://api.openweathermap.org/data/2.5/forecast/daily?q={city}&mode=xml&units=metric&cnt=7&appid=3f2e224b815c0ed45524322e145149f0");
 
             while (reader.Read())
@@ -69,16 +74,13 @@ namespace XMLWeather
             }
         }
 
+        //add additional information to the day object representing current date
         public static void ExtractCurrent()
         {
             //current info is not included in forecast file so we need to use this file to get it
             XmlReader reader = XmlReader.Create($"http://api.openweathermap.org/data/2.5/weather?q={city}&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
 
-            //TODO: find the city and current temperature and add to appropriate item in days list
-
-            reader.ReadToFollowing("city");
-            days[0].location = reader.GetAttribute("name");
-
+            //gets current temp at current date
             reader.ReadToFollowing("temperature");
             days[0].currentTemp = reader.GetAttribute("value");
         }
@@ -97,16 +99,22 @@ namespace XMLWeather
             return temperature;
         }
 
+        //round max and min temperature values from any given day, then return them in a new list of strings
+        //where position 0 the rounded min and position 1 is the rounded max
         public static List<string> RoundDayTempValues(Day d)
         {
+            //create list of strings to hold rounded temperatures
             List<string> roundedTemps = new List<string>();
 
+            //create strings to hold rounded min and max temperatures
             string roundedLow = RoundTemp(d.tempLow);
             string roundedHigh = RoundTemp(d.tempHigh);
 
+            //add them to the list
             roundedTemps.Add(roundedLow);
             roundedTemps.Add(roundedHigh);
 
+            //return the rounded values
             return roundedTemps;
         }
     }

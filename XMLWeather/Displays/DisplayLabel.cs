@@ -10,15 +10,22 @@ namespace XMLWeather
 {
     public class DisplayLabel
     {
+        //create common objects between current and forecast displays
         public Label maxOut, minOut, weatherOut;
         public Label maxLabel, minLabel;
         public Label dateOut;
         public PictureBox backPanel;
+
+        //create day object to hold weather info inside the display
         public Day dayData;
 
+        //create ints to hold position
         public int x, y;
+
+        //create ints to hold size
         public int width, height;
 
+        //moves display to requested postion
         public void MoveLabel(int _x, int _y)
         {
             x = _x;
@@ -27,6 +34,7 @@ namespace XMLWeather
             backPanel.Location = new Point(x, y);
         }
 
+        //sets all label objects parent to the picure box
         public void SetAllParents()
         {
             dateOut.Parent = backPanel;
@@ -38,10 +46,13 @@ namespace XMLWeather
             minLabel.Parent = backPanel;
         }
 
+        //find conditionValue from day stored in display
         public void SetBackgroundImage()
         {
+            //create int to hold the conditionValue
             int val = dayData.conditionValue;
 
+            //set background of the display to relevant image
             if (val >= 200 && val < 300)
             {
                 backPanel.Image = Properties.Resources.Thunderstorm;
